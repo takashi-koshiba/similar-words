@@ -1,4 +1,5 @@
-# calc_cost
+# similar-words
+
 文字列の類似度を計算します。
 <p>文字が連続で一致している場合に一致率が高くなる仕様です。<br>
 但し入力文字数が３文字以下の場合は１文字の一致を許容するため、<br>
@@ -13,7 +14,7 @@
 ```bash
 git clone https://github.com/takashi-koshiba/calct_costStr
 cd calc_costStr/python/
-python exampleCalcCost.py
+python exampleCalcCost.py "文字列1" "文字列2"
 ```
 
 
