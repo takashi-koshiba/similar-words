@@ -12,8 +12,8 @@
 <h2>使用方法</h2>
 
 ```bash
-git clone https://github.com/takashi-koshiba/calct_costStr
-cd calct_costStr/python/
+git clone https://github.com/takashi-koshiba/similar-words
+cd similar-words/python/
 python exampleCalcCost.py "文字列1" "文字列2"
 ```
 
