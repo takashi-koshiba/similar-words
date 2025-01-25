@@ -2,17 +2,16 @@
 import sys
 class CalcCostStr:
     @staticmethod
-    def maxCost(length) :
+    def maxCost(length,isShort) :
         cost= (length * (length+ 1) ) / 2;
-        return cost-length if length >3 else cost
+        return cost if isShort else cost-length
 	
 	
 
     @staticmethod
-    def getMaxCost(target,inputTotalCost,splitArr) :
+    def getMaxCost(target,inputTotalCost,splitArr,isShort) :
 
-        targetCost=CalcCostStr.maxCost(len(target));
-		
+        targetCost=CalcCostStr.maxCost(len(target),isShort);
         inputCountMatch=CalcCostStr.count_match(splitArr,target);
 		
         inputMatchRatio=inputCountMatch/inputTotalCost;
@@ -63,11 +62,12 @@ if __name__ == "__main__":
     args = sys.argv
     inputStr=args[1]
     targetStr=args[2]
+    inputLen=len(inputStr)
+    isShort=inputLen<4
     
-    
-    strCost=cost.maxCost(len(inputStr))
+    strCost=cost.maxCost(inputLen,isShort)
     splitStr=cost.split_str(inputStr,strCost)
     
-    result = cost.getMaxCost(targetStr, strCost,splitStr)
+    result = cost.getMaxCost(targetStr, strCost,splitStr,isShort)
     
     print(result)
