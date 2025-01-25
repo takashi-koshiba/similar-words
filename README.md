@@ -13,7 +13,7 @@
 
 ```bash
 git clone https://github.com/takashi-koshiba/calct_costStr
-cd calc_costStr/python/
+cd calct_costStr/python/
 python exampleCalcCost.py "文字列1" "文字列2"
 ```
 
