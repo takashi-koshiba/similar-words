@@ -24,7 +24,7 @@ class CalcCostStr:
         return result;
 		
     @staticmethod
-    def split_str(string, total_cost):
+    def split_str(string, total_cost,isShort):
         
         arr = [total_cost] 
         str_len = len(string) 
@@ -35,7 +35,7 @@ class CalcCostStr:
                 sub_str = string[i:ii] 
                 
                
-                if str_len > 3 and len(sub_str) <= 1:
+                if not isShort and len(sub_str) <= 1:
                     continue
                 
                 if index < len(arr):
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     isShort=inputLen<4
     
     strCost=cost.maxCost(inputLen,isShort)
-    splitStr=cost.split_str(inputStr,strCost)
+    splitStr=cost.split_str(inputStr,strCost,isShort)
     
     result = cost.getMaxCost(targetStr, strCost,splitStr,isShort)
     
