@@ -1,4 +1,5 @@
 
+import sys
 class CalcCostStr:
     @staticmethod
     def maxCost(length) :
@@ -59,8 +60,9 @@ class CalcCostStr:
 if __name__ == "__main__":
     cost=CalcCostStr()
     
-    inputStr="ABCDEFG"
-    targetStr="ABC"
+    args = sys.argv
+    inputStr=args[1]
+    targetStr=args[2]
     
     
     strCost=cost.maxCost(len(inputStr))
