@@ -1,18 +1,17 @@
-
 import sys
-class CalcCostStr:
+class SimilarWards:
     @staticmethod
-    def maxCost(length,isShort) :
+    def maxLength(length,isShort) :
         cost= (length * (length+ 1) ) / 2;
         return cost if isShort else cost-length
 	
 	
 
     @staticmethod
-    def getMaxCost(target,inputTotalCost,splitArr,isShort) :
+    def exec(target,inputTotalCost,splitArr,isShort) :
 
-        targetCost=CalcCostStr.maxCost(len(target),isShort);
-        inputCountMatch=CalcCostStr.count_match(splitArr,target);
+        targetCost=similarWards.maxLength(len(target),isShort);
+        inputCountMatch=similarWards.count_match(splitArr,target);
 		
         inputMatchRatio=inputCountMatch/inputTotalCost;
         inputCost=inputMatchRatio*inputCountMatch;
@@ -25,8 +24,10 @@ class CalcCostStr:
 		
     @staticmethod
     def split_str(string, total_cost,isShort):
+        arr=[]
         
-        arr = [total_cost] 
+        
+
         str_len = len(string) 
         index = 0
     
@@ -38,10 +39,8 @@ class CalcCostStr:
                 if not isShort and len(sub_str) <= 1:
                     continue
                 
-                if index < len(arr):
-                    arr[index] = sub_str
-                else:
-                    arr.append(sub_str)
+                arr.append(sub_str) 
+                
                 index += 1
         
         return arr
@@ -57,7 +56,7 @@ class CalcCostStr:
 	
 
 if __name__ == "__main__":
-    cost=CalcCostStr()
+    similarWards=SimilarWards()
     
     args = sys.argv
     inputStr=args[1]
@@ -65,9 +64,9 @@ if __name__ == "__main__":
     inputLen=len(inputStr)
     isShort=inputLen<4
     
-    strCost=cost.maxCost(inputLen,isShort)
-    splitStr=cost.split_str(inputStr,strCost,isShort)
+    strMaxLen=similarWards.maxLength(inputLen,isShort)
+    splitStr=similarWards.split_str(inputStr,strMaxLen,isShort)
     
-    result = cost.getMaxCost(targetStr, strCost,splitStr,isShort)
+    result = similarWards.exec(targetStr, strMaxLen,splitStr,isShort)
     
     print(result)
