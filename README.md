@@ -14,7 +14,7 @@
 ```bash
 git clone https://github.com/takashi-koshiba/similar-words
 cd similar-words/python/
-python test.py "検索文字列" "検索対象文字列"
+python test.py "検索文字列" "ターゲット文字列"
 ```
 
 
