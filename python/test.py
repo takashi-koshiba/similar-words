@@ -1,4 +1,5 @@
 import sys
+
 class SimilarWards:
     @staticmethod
     def maxLength(length,isShort) :
@@ -14,9 +15,10 @@ class SimilarWards:
         inputCountMatch=similarWards.count_match(splitArr,target);
 		
         inputMatchRatio=inputCountMatch/inputTotalCost;
-        inputCost=inputMatchRatio*inputCountMatch;
-		
-        result=inputCost/targetCost;
+        targetMatchRatio = min(inputCountMatch, targetCost) / max(inputCountMatch, targetCost);
+
+        
+        result=inputMatchRatio*targetMatchRatio
 
 		
 		
